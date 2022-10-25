@@ -1,0 +1,60 @@
+<BASIC>
+
+Debuger:
+trace
+print
+log
+msbox
+
+Kernel:
+TerminateApp
+ChekStartup
+
+Jsonhelper:
+Ser
+Deser
+
+CloudReader:
+Read
+
+ReflectionOverriding: ...
+
+<APPLICATION>
+
+SolidDate
+Year { get; set; }
+Month { get; set; }
+Day { get; set; }
+Hour { get; set; }
+Minute { get; set; }
+Second { get; set; }
+
+AppConfig:
+Enable 
+Activationdate 
+LoopFrec 
+
+Application:
+ApplicationConfig
+UpdateAppConfig
+Exit
+
+CalendarManager:
+CeckActivationDate ex
+CechActivationDay ex
+
+Emigrator:
+ApplicationName
+EmigrationPath
+TargetPath
+ApplicationPath
+IsEmegrated
+Emigrate
+
+RunTimeLoop:
+UpdateTime
+Loopstate
+StartLoop
+
+
+

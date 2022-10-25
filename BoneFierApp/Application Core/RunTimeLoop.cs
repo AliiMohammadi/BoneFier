@@ -1,18 +1,16 @@
-﻿using System;
+﻿using BoneFier.Basic;
+using ReflectionClassOverriding;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using System.Threading;
 using System.Threading.Tasks;
-using ReflectionClassOverriding;
 
-namespace BoneFierApp
+namespace BoneFier
 {
     internal class RunTimeLoop
-    {   
-        /// <summary>
-        /// Loop update frequensy in second
-        /// </summary>
-        public static int UpdateTime = 30;//In sec
+    {
         static bool LoopState;
         public static bool LoopActivationState
         {
@@ -20,19 +18,20 @@ namespace BoneFierApp
             set { LoopState = value; }
         }
 
-        public static void StartLoop()
+        public static void StartLoop(int yeild)
         {
             ReflectionOverriding ObjectCaller = new ReflectionOverriding(System.Reflection.Assembly.GetExecutingAssembly());
             ObjectCaller.SendMessage("Start");
 
-            int milisecUpdatetime = UpdateTime * 1000;
+            int milisecUpdatetime = yeild * 1000;
             LoopState = true;
+            Debuger.Print("Loop Started.");
 
             while (LoopState)
             {
                 ObjectCaller.SendMessage("Update");
 
-                System.Threading.Thread.Sleep(milisecUpdatetime);
+                Thread.Sleep(milisecUpdatetime);
             }
         }
     }

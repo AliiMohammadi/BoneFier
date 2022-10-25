@@ -6,14 +6,14 @@ using System.Net;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace BoneFierApp
+namespace BoneFier.Basic
 {
     /// <summary>
     /// .کلاس خواندن یک صفحه وب
     /// این برنامه رو اولین بار اسکریپت کید برای اپدیت کردن برنامه خودش استفاده کرد.
     /// اطلاعات رو داخل سایت گیت لب میزاشت و با استفاده از این کلاس اطلاعات رو میخوند
     /// </summary>
-    internal class CloudReader
+    public class CloudReader
     {
         public string URL;
 

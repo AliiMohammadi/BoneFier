@@ -6,9 +6,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace BoneFierApp
+namespace BoneFier.Basic
 {
-    internal class S_Actions
+    internal class kernel
     {
         /// <summary>
         /// تابع کشتن روند
@@ -18,7 +18,7 @@ namespace BoneFierApp
         {
             if (string.IsNullOrWhiteSpace(App))
                 return;
-            
+
             Process[] mainAppProcessOrProcessesRunning = Process.GetProcessesByName(App);
 
             foreach (var p in mainAppProcessOrProcessesRunning)
@@ -30,7 +30,7 @@ namespace BoneFierApp
         /// برنامه رو روی حالت ستارت اپ میاره
         /// </summary>
         /// <returns></returns>
-        public static bool ChekStartUp(string AppName , string TargetPath)
+        public static bool ChekStartUp(string AppName, string TargetPath)
         {
             RegistryKey rkApp = Registry.CurrentUser.OpenSubKey("SOFTWARE\\Microsoft\\Windows\\CurrentVersion\\Run", true);
 

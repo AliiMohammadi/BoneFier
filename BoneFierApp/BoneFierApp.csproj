@@ -5,7 +5,7 @@
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
     <ProjectGuid>{62E91D5A-C64C-4F1A-A274-0548DC1E21B9}</ProjectGuid>
-    <OutputType>Exe</OutputType>
+    <OutputType>WinExe</OutputType>
     <RootNamespace>BoneFierApp</RootNamespace>
     <AssemblyName>BoneFierApp</AssemblyName>
     <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
@@ -52,23 +52,21 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="AppActions.cs" />
-    <Compile Include="Components\HappyTrolling\CloudReader.cs" />
-    <Compile Include="Components\CloseApplication.cs" />
-    <Compile Include="Components\HappyTrolling\Forms\VideoPlayer.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Components\HappyTrolling\Forms\VideoPlayer.Designer.cs">
-      <DependentUpon>VideoPlayer.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Components\HappyTrolling\HappyTrolling.cs" />
-    <Compile Include="Components\HappyTrolling\JsonHelper.cs" />
-    <Compile Include="Components\HappyTrolling\RemoteData.cs" />
-    <Compile Include="ConsoleShow.cs" />
+    <Compile Include="AppConfig.cs" />
+    <Compile Include="Application.cs" />
+    <Compile Include="Basic Core\CloudReader.cs" />
+    <Compile Include="Basic Core\Debuger.cs" />
+    <Compile Include="Basic Core\JsonHelper.cs" />
+    <Compile Include="Basic Core\kernel.cs" />
+    <Compile Include="Basic Core\ReflectionOverridngDLL\Behavior.cs" />
+    <Compile Include="Basic Core\ReflectionOverridngDLL\ReflectionOverriding.cs" />
+    <Compile Include="Calendarmanager.cs" />
+    <Compile Include="Emigrator.cs" />
+    <Compile Include="HappyTrolling.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="RunTimeLoop.cs" />
-    <Compile Include="S_Actions.cs" />
+    <Compile Include="SolidDate.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
@@ -91,11 +89,6 @@
       <Isolated>False</Isolated>
       <EmbedInteropTypes>True</EmbedInteropTypes>
     </COMReference>
-  </ItemGroup>
-  <ItemGroup>
-    <EmbeddedResource Include="Components\HappyTrolling\Forms\VideoPlayer.resx">
-      <DependentUpon>VideoPlayer.cs</DependentUpon>
-    </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

