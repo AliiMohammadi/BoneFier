@@ -5,8 +5,6 @@ VisualStudioVersion = 17.0.31903.59
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BoneFierApp", "BoneFierApp\BoneFierApp.csproj", "{62E91D5A-C64C-4F1A-A274-0548DC1E21B9}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BoneFierRemake", "BoneFierRemake\BoneFierRemake.csproj", "{A73F8F6E-70F6-4D18-A188-14AE77D336C9}"
-EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -17,10 +15,6 @@ Global
 		{62E91D5A-C64C-4F1A-A274-0548DC1E21B9}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{62E91D5A-C64C-4F1A-A274-0548DC1E21B9}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{62E91D5A-C64C-4F1A-A274-0548DC1E21B9}.Release|Any CPU.Build.0 = Release|Any CPU
-		{A73F8F6E-70F6-4D18-A188-14AE77D336C9}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{A73F8F6E-70F6-4D18-A188-14AE77D336C9}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{A73F8F6E-70F6-4D18-A188-14AE77D336C9}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{A73F8F6E-70F6-4D18-A188-14AE77D336C9}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

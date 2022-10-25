@@ -10,7 +10,17 @@
       "ProjectGuid": "a2fe74e1-b743-11d0-ae1a-00a0c90fffc3",
       "DisplayName": "Miscellaneous Files",
       "ColorIndex": -1
+    },
+    "1a873c89-d022-4642-903a-22e13914d46a": {
+      "ProjectGuid": "1a873c89-d022-4642-903a-22e13914d46a",
+      "DisplayName": "BoneFierRemake",
+      "ColorIndex": 1
+    },
+    "a73f8f6e-70f6-4d18-a188-14ae77d336c9": {
+      "ProjectGuid": "a73f8f6e-70f6-4d18-a188-14ae77d336c9",
+      "DisplayName": "BoneFierRemake",
+      "ColorIndex": 2
     }
   },
-  "NextColorIndex": 1
+  "NextColorIndex": 3
 }
