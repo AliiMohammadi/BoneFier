@@ -20,7 +20,12 @@
       "ProjectGuid": "a73f8f6e-70f6-4d18-a188-14ae77d336c9",
       "DisplayName": "BoneFierRemake",
       "ColorIndex": 2
+    },
+    "d3d9b1fa-1f6e-47bf-88e4-8f3907c16242": {
+      "ProjectGuid": "d3d9b1fa-1f6e-47bf-88e4-8f3907c16242",
+      "DisplayName": "Video Player test",
+      "ColorIndex": 3
     }
   },
-  "NextColorIndex": 3
+  "NextColorIndex": 4
 }

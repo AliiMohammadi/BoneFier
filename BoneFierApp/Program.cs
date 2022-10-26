@@ -22,8 +22,11 @@ namespace BoneFier
 
         public static bool Debug = false;
 
+        [STAThread]
         static void Main(string[] args)
         {
+            System.Windows.Forms.Application.EnableVisualStyles();
+            System.Windows.Forms.Application.SetCompatibleTextRenderingDefault(false);
             Start();
         }
         static void Start()

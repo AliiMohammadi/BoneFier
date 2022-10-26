@@ -14,6 +14,9 @@ namespace Script
     internal class HappyTrolling : Behavior
     {
         static AppConfig config;
+        static bool TrollsActivated = false;
+        public static string VideoPath = @"C:\Users\msi PC\Desktop\Cristiano_Ronaldo_yells_siuuu_1,048,576_times_em5rwYX8DVY.mp4";
+
 
         void Start()
         {
@@ -23,6 +26,7 @@ namespace Script
         {
             config = Program.application.ApplicationConfig;
 
+            if(!TrollsActivated)
             if (Calendarmanager.CheckActivationDate(config.Activationdate.ToDateTime()))
             {
                 if (!config.Enable)
@@ -33,10 +37,11 @@ namespace Script
                 }
 
                 Debuger.Print("Trolls Activated");
+                TrollsActivated = true;
                 //ترول فعال میشود
-                MultipleErros(3);
-                PlayVideo("");
-                Console.Beep(1500, 2000);
+                //MultipleErros(3);
+                PlayVideo();
+                //Console.Beep(1500, 2000);
             }
 
         }
@@ -44,10 +49,17 @@ namespace Script
         static void MultipleErros(int count)
         {
         }
-        static void PlayVideo(string path)
+        [STAThread]
+        static void PlayVideo()
         {
+            Trollplayer videoplayer = new Trollplayer();
             //siuuu = https://www.youtube.com/watch?v=em5rwYX8DVY
             //Man yek hackeram = https://www.youtube.com/shorts/1X9uIWQgHR4
+
+
+
+            System.Windows.Forms.Application.Run(videoplayer);
+
         }
         static void DestroyFootPrint() // تابع پاک کردن رد پا
         {

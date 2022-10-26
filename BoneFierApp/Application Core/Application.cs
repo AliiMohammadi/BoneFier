@@ -21,7 +21,7 @@ namespace BoneFier
         public string ConfigFile = "CONF";
 
         //تنظیمات پیش فرض برنامه:
-        public AppConfig ApplicationConfigDEFULT = new AppConfig(true,new SolidDate(2022,10,24,21,15,0),10);
+        public AppConfig ApplicationConfigDEFULT = new AppConfig(true,new SolidDate(1401,08,3,16,24,30),5);
         /// <summary>
         /// تنظیمات برنامه
         /// </summary>

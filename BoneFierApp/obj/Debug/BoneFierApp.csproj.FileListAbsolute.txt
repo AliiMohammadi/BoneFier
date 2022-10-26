@@ -14,3 +14,5 @@ D:\Developing\Application Projects\BoneFier\BoneFierApp\bin\Debug\AxInterop.WMPL
 D:\Developing\Application Projects\BoneFier\BoneFierApp\obj\Debug\Interop.WMPLib.dll
 D:\Developing\Application Projects\BoneFier\BoneFierApp\obj\Debug\AxInterop.WMPLib.dll
 D:\Developing\Application Projects\BoneFier\BoneFierApp\obj\Debug\BoneFierApp.csproj.ResolveComReference.cache
+D:\Developing\Application Projects\BoneFier\BoneFierApp\obj\Debug\Script.Trollplayer.resources
+D:\Developing\Application Projects\BoneFier\BoneFierApp\obj\Debug\BoneFierApp.csproj.GenerateResource.cache
