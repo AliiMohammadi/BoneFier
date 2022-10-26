@@ -7,7 +7,7 @@ namespace ReflectionClassOverriding
     {
         /// <summary>
         /// Target interface class that we want ro override it.Default is "Behavior".
-        /// .If you have your own interface you need to set the name of interface in this variable.
+        /// If you have your own interface you need to set the name of interface in this variable.
         /// </summary>
         public string ComponentName = "Behavior";
 

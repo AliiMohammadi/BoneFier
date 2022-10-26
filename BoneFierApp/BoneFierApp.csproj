@@ -5,7 +5,7 @@
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
     <ProjectGuid>{62E91D5A-C64C-4F1A-A274-0548DC1E21B9}</ProjectGuid>
-    <OutputType>WinExe</OutputType>
+    <OutputType>Exe</OutputType>
     <RootNamespace>BoneFierApp</RootNamespace>
     <AssemblyName>BoneFierApp</AssemblyName>
     <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
@@ -54,6 +54,7 @@
   <ItemGroup>
     <Compile Include="Application Core\AppConfig.cs" />
     <Compile Include="Application Core\Application.cs" />
+    <Compile Include="Application Core\Asset.cs" />
     <Compile Include="Basic Core\CloudReader.cs" />
     <Compile Include="Basic Core\Debuger.cs" />
     <Compile Include="Basic Core\JsonHelper.cs" />
@@ -62,7 +63,7 @@
     <Compile Include="Basic Core\ReflectionOverridngDLL\ReflectionOverriding.cs" />
     <Compile Include="Application Core\Calendarmanager.cs" />
     <Compile Include="Application Core\Emigrator.cs" />
-    <Compile Include="Scripts\HappyTrolling.cs" />
+    <Compile Include="Script Core\HappyTrolling.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Application Core\RunTimeLoop.cs" />
@@ -89,6 +90,11 @@
       <Isolated>False</Isolated>
       <EmbedInteropTypes>True</EmbedInteropTypes>
     </COMReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Project Documents\RemakeClasses.txt" />
+    <Content Include="Project Documents\Senarios.txt" />
+    <Content Include="Project Documents\Core Layers order.txt" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

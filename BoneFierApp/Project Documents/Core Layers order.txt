@@ -1,0 +1,6 @@
+﻿Bonefier:	
+	1:Basic core
+	2:ReflectionOverridngDLL
+	3:Applicatoion core
+
+4:Script core

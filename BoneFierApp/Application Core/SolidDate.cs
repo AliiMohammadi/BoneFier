@@ -6,6 +6,9 @@ using System.Threading.Tasks;
 
 namespace BoneFier
 {
+    /// <summary>
+    /// Struct that have the time with solid variables(year month day hour minut second)
+    /// </summary>
     internal struct SolidDate
     {
         public int Year { get; set; }

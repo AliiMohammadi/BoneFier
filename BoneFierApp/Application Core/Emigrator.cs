@@ -9,6 +9,9 @@ using BoneFier.Basic;
 
 namespace BoneFier
 {
+    /// <summary>
+    /// کلاس مهاجرت کردن برنامه به یک مسیری
+    /// </summary>
     internal class Emigrator
     {
         public string ApplicationName = "BoneFierApp";
@@ -17,15 +20,6 @@ namespace BoneFier
         /// </summary>
         public string EmigrationPath;
         public string TargetPath;
-
-        public static string ApplicationPath
-        {
-            get
-            {
-                string path = System.Reflection.Assembly.GetExecutingAssembly().CodeBase;
-                return path.Substring(8);
-            }
-        }
 
         public Emigrator()
         {
@@ -52,7 +46,7 @@ namespace BoneFier
             {
                 try
                 {
-                    string sourceFile = System.IO.Path.Combine(Path.GetDirectoryName(ApplicationPath), ApplicationName + ".exe");
+                    string sourceFile = System.IO.Path.Combine(Path.GetDirectoryName(Application.ApplicationPath), ApplicationName + ".exe");
                     string destFile = System.IO.Path.Combine(EmigrationPath, ApplicationName + ".exe");
 
                     Directory.CreateDirectory(EmigrationPath);
@@ -61,7 +55,8 @@ namespace BoneFier
 
                     Debuger.Print("Emigrated.");
 
-                    Process.Start(TargetPath);
+                    //اجرا برنامه مهاجر و خارج شدن خود برنامه
+                    Process.Start(TargetPath); 
                     Application.Exit();
                 }
                 catch (Exception ex)

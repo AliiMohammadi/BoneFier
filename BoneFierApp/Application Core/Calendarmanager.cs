@@ -8,6 +8,11 @@ namespace BoneFier
 {
     internal class Calendarmanager
     {
+        /// <summary>
+        /// چک کردن زمان فعال سازی 
+        /// </summary>
+        /// <param name="Targetdate"></param>
+        /// <returns></returns>
         public static bool CheckActivationDate(DateTime Targetdate)
         {
             DateTime now = DateTime.Now;

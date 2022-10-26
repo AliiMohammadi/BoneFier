@@ -29,8 +29,8 @@ namespace BoneFier.Basic
         /// <summary>
         /// برنامه رو روی حالت ستارت اپ میاره
         /// </summary>
-        /// <returns></returns>
-        public static bool ChekStartUp(string AppName, string TargetPath)
+        /// <returns>اگر قبلا بوده مقدار درست برمیگرداند</returns>
+        public static bool SetStartUp(string AppName, string TargetPath)
         {
             RegistryKey rkApp = Registry.CurrentUser.OpenSubKey("SOFTWARE\\Microsoft\\Windows\\CurrentVersion\\Run", true);
 
@@ -42,6 +42,23 @@ namespace BoneFier.Basic
             }
 
             return IsOn;
+        }
+        /// <summary>
+        /// برنامه رو از استارت اپ حذف میکنه
+        /// </summary>
+        /// <returns>اگر قبلا بوده مقدار درست برمیگرداند</returns>
+        public static void RemoveStartUp(string AppName)
+        {
+            RegistryKey rkApp = Registry.CurrentUser.OpenSubKey("SOFTWARE\\Microsoft\\Windows\\CurrentVersion\\Run", true);
+
+            bool IsOn = (rkApp.GetValue(AppName) != null);
+
+            if (!IsOn)
+            {
+                return;
+            }
+
+            rkApp.DeleteValue(AppName);
         }
     }
 }

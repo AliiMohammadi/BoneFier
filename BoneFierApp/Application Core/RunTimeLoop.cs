@@ -9,15 +9,19 @@ using System.Threading.Tasks;
 
 namespace BoneFier
 {
-    internal class RunTimeLoop
+    internal static class RunTimeLoop
     {
         static bool LoopState;
+
         public static bool LoopActivationState
         {
             get { return LoopState; }
             set { LoopState = value; }
         }
-
+        /// <summary>
+        /// Main loop
+        /// </summary>
+        /// <param name="yeild">loop waiting time in second</param>
         public static void StartLoop(int yeild)
         {
             ReflectionOverriding ObjectCaller = new ReflectionOverriding(System.Reflection.Assembly.GetExecutingAssembly());
