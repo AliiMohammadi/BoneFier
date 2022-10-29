@@ -51,9 +51,8 @@ namespace BoneFier.Basic
                 return alltext;
 
             }
-            catch (Exception ex)
+            catch 
             {
-                Console.WriteLine("Could not read!. Exception: " + ex.Message);
                 return null;
             }
         }

@@ -31,18 +31,18 @@ namespace BoneFier.Basic
         /// <param name="message"></param>
         public static void Print(object message)
         {
-            Console.WriteLine(message);
+            Console.WriteLine("[Log] " + message);
         }
         public static void PrintError(object message)
         {
             Console.ForegroundColor = ConsoleColor.Red;
-            Console.WriteLine(message);
+            Console.WriteLine("[Error] " + message);
             Console.ForegroundColor = ConsoleColor.White;
         }
         public static void PrintWarning(object message)
         {
             Console.ForegroundColor = ConsoleColor.Yellow;
-            Console.WriteLine(message);
+            Console.WriteLine("[Warning] " + message);
             Console.ForegroundColor = ConsoleColor.White;
         }
         /// <summary>

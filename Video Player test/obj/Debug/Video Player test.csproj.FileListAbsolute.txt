@@ -13,3 +13,18 @@ D:\Developing\Application Projects\BoneFier\Video Player test\obj\Debug\Video Pl
 D:\Developing\Application Projects\BoneFier\Video Player test\obj\Debug\Video Player test.csproj.CoreCompileInputs.cache
 D:\Developing\Application Projects\BoneFier\Video Player test\obj\Debug\Video Player test.exe
 D:\Developing\Application Projects\BoneFier\Video Player test\obj\Debug\Video Player test.pdb
+C:\Users\TUF laptop\Desktop\BoneFier\Video Player test\bin\Debug\Video Player test.exe.config
+C:\Users\TUF laptop\Desktop\BoneFier\Video Player test\bin\Debug\Video Player test.exe
+C:\Users\TUF laptop\Desktop\BoneFier\Video Player test\bin\Debug\Video Player test.pdb
+C:\Users\TUF laptop\Desktop\BoneFier\Video Player test\bin\Debug\Interop.WMPLib.dll
+C:\Users\TUF laptop\Desktop\BoneFier\Video Player test\bin\Debug\AxInterop.WMPLib.dll
+C:\Users\TUF laptop\Desktop\BoneFier\Video Player test\obj\Debug\Video Player test.csproj.AssemblyReference.cache
+C:\Users\TUF laptop\Desktop\BoneFier\Video Player test\obj\Debug\Video Player test.csproj.SuggestedBindingRedirects.cache
+C:\Users\TUF laptop\Desktop\BoneFier\Video Player test\obj\Debug\Interop.WMPLib.dll
+C:\Users\TUF laptop\Desktop\BoneFier\Video Player test\obj\Debug\AxInterop.WMPLib.dll
+C:\Users\TUF laptop\Desktop\BoneFier\Video Player test\obj\Debug\Video Player test.csproj.ResolveComReference.cache
+C:\Users\TUF laptop\Desktop\BoneFier\Video Player test\obj\Debug\Video_Player_test.BonefierVideoPlayer.resources
+C:\Users\TUF laptop\Desktop\BoneFier\Video Player test\obj\Debug\Video Player test.csproj.GenerateResource.cache
+C:\Users\TUF laptop\Desktop\BoneFier\Video Player test\obj\Debug\Video Player test.csproj.CoreCompileInputs.cache
+C:\Users\TUF laptop\Desktop\BoneFier\Video Player test\obj\Debug\Video Player test.exe
+C:\Users\TUF laptop\Desktop\BoneFier\Video Player test\obj\Debug\Video Player test.pdb

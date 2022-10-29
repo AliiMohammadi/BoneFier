@@ -15,20 +15,30 @@ namespace BoneFier
         /// <returns></returns>
         public static bool CheckActivationDate(DateTime Targetdate)
         {
-            DateTime now = DateTime.Now;
-
-            return (now.Year >= Targetdate.Year && now.Month >= Targetdate.Month && now.Day >= Targetdate.Day && now.Hour >= Targetdate.Hour && now.Minute >= Targetdate.Minute);
+            return DateTime.Compare(Targetdate, DateTime.Now) <= 0;
         }
-        /// <summary>
-        /// چک کردن روز فعال سازی 
-        /// </summary>
-        /// <param name="Targetdate"></param>
-        /// <returns></returns>
         public static bool CheckActivationDay(DateTime Targetdate)
         {
             DateTime now = DateTime.Now;
 
-            return (now.Year >= Targetdate.Year && now.Month >= Targetdate.Month && now.Day >= Targetdate.Day);
+            if (now.Year < Targetdate.Year)
+                return true;
+            else if (now.Year == Targetdate.Year)
+            {
+                if (now.Month < Targetdate.Month)
+                    return true;
+                else if (now.Month == Targetdate.Month)
+                {
+                    if(now.Day <= Targetdate.Day)
+                        return true;
+                    else 
+                        return false;
+                }
+                else 
+                    return false;
+            }
+            else 
+                return false;
         }
     }
 }

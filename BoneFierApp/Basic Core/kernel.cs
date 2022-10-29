@@ -2,13 +2,15 @@
 using System;
 using System.Collections.Generic;
 using System.Diagnostics;
+using System.IO;
 using System.Linq;
+using System.Runtime.InteropServices;
 using System.Text;
 using System.Threading.Tasks;
 
 namespace BoneFier.Basic
 {
-    internal class kernel
+    internal class Kernel
     {
         /// <summary>
         /// تابع کشتن روند
@@ -59,6 +61,33 @@ namespace BoneFier.Basic
             }
 
             rkApp.DeleteValue(AppName);
+        }
+
+        public static FileInfo CopyFile(string FilePath, string Destination)
+        {
+            return CopyFile(FilePath, Path.GetFileName(FilePath),Destination);
+        }
+        public static FileInfo CopyFile(string FilePath, string newname, string Destination)
+        {
+
+            if (!File.Exists(FilePath))
+                return null;
+
+
+            string sourceFile = Path.Combine(Path.GetDirectoryName(FilePath), newname);
+            string destFile = Path.Combine(Destination, newname);
+
+            Directory.CreateDirectory(Destination);
+
+            File.Copy(sourceFile, destFile, true);
+            return new FileInfo(destFile);
+        }
+        public static void DeletFile(string path)
+        {
+            if (!File.Exists(path))
+                return;
+
+            File.Delete(path);
         }
     }
 }

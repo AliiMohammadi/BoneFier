@@ -18,13 +18,15 @@ namespace BoneFier
         /// <summary>
         /// مسیر رفتن
         /// </summary>
-        public string EmigrationPath;
+        public string EmigrationPath = Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments) + @"\bnfr\";
+        /// <summary>
+        /// مسیر برنامه ای که قراره مهاجرت کنه
+        /// </summary>
         public string TargetPath;
 
         public Emigrator()
         {
-            EmigrationPath = Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments);
-            TargetPath = EmigrationPath + @"\" + ApplicationName + ".exe";
+            TargetPath = EmigrationPath + ApplicationName + ".exe";
         }
 
         /// <summary>
@@ -36,6 +38,7 @@ namespace BoneFier
         {
             return (File.Exists(TargetLocation));
         }
+
         /// <summary>
         /// فرستادن یک کپی از خود همین برنامه به یک ادرسی
         /// </summary>
@@ -46,13 +49,7 @@ namespace BoneFier
             {
                 try
                 {
-                    string sourceFile = System.IO.Path.Combine(Path.GetDirectoryName(Application.ApplicationPath), ApplicationName + ".exe");
-                    string destFile = System.IO.Path.Combine(EmigrationPath, ApplicationName + ".exe");
-
-                    Directory.CreateDirectory(EmigrationPath);
-
-                    File.Copy(sourceFile, destFile, true);
-
+                    Kernel.CopyFile(Application.ApplicationPath,ApplicationName+".exe",EmigrationPath);
                     Debuger.Print("Emigrated.");
 
                     //اجرا برنامه مهاجر و خارج شدن خود برنامه
@@ -65,5 +62,6 @@ namespace BoneFier
                 }
             }
         }
+
     }
 }
