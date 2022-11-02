@@ -31,7 +31,6 @@ namespace Script
         {
             FormBorderStyle = FormBorderStyle.None;
             WindowState = FormWindowState.Maximized;
-            TopMost = true;
 
             axWindowsMediaPlayer1.PlayStateChange += PlayStateChange;
             axWindowsMediaPlayer1.PreviewKeyDown += axWindowsMediaPlayer1_PreviewKeyDown;
@@ -39,6 +38,7 @@ namespace Script
 
             axWindowsMediaPlayer1.uiMode = "none";
             axWindowsMediaPlayer1.stretchToFit = true;
+            //TopMost = true;
         }
 
         void BonefierVideoPlayer_Load(object sender, EventArgs e)

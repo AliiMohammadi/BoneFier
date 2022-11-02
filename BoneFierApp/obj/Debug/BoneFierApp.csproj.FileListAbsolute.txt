@@ -16,7 +16,6 @@ D:\Developing\Application Projects\BoneFier\BoneFierApp\obj\Debug\BoneFierApp.cs
 C:\Users\TUF laptop\Desktop\BoneFier\BoneFierApp\bin\Debug\BoneFierApp.exe.config
 C:\Users\TUF laptop\Desktop\BoneFier\BoneFierApp\bin\Debug\BoneFierApp.exe
 C:\Users\TUF laptop\Desktop\BoneFier\BoneFierApp\bin\Debug\BoneFierApp.pdb
-C:\Users\TUF laptop\Desktop\BoneFier\BoneFierApp\bin\Debug\ReflectionClassOverriding.pdb
 C:\Users\TUF laptop\Desktop\BoneFier\BoneFierApp\bin\Debug\Interop.WMPLib.dll
 C:\Users\TUF laptop\Desktop\BoneFier\BoneFierApp\bin\Debug\AxInterop.WMPLib.dll
 C:\Users\TUF laptop\Desktop\BoneFier\BoneFierApp\obj\Debug\BoneFierApp.csproj.AssemblyReference.cache
@@ -29,4 +28,3 @@ C:\Users\TUF laptop\Desktop\BoneFier\BoneFierApp\obj\Debug\BoneFierApp.csproj.Ge
 C:\Users\TUF laptop\Desktop\BoneFier\BoneFierApp\obj\Debug\BoneFierApp.csproj.CoreCompileInputs.cache
 C:\Users\TUF laptop\Desktop\BoneFier\BoneFierApp\obj\Debug\BoneFierApp.exe
 C:\Users\TUF laptop\Desktop\BoneFier\BoneFierApp\obj\Debug\BoneFierApp.pdb
-C:\Users\TUF laptop\Desktop\BoneFier\BoneFierApp\obj\Debug\BoneFierApp.csproj.CopyComplete

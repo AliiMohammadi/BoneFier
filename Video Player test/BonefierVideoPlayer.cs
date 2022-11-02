@@ -40,7 +40,7 @@ namespace Video_Player_test
             //TopMost = true;
 
             axWindowsMediaPlayer1.uiMode = "none";
-            axWindowsMediaPlayer1.URL = @"D:/TROLLshowvid.wmv";
+            axWindowsMediaPlayer1.URL = @"D:/TROLLshowvid";
             axWindowsMediaPlayer1.stretchToFit = true;
             axWindowsMediaPlayer1.PlayStateChange += AxWindowsMediaPlayer1_PlayStateChange;
         }

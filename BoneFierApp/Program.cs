@@ -21,9 +21,12 @@ namespace BoneFier
         [STAThread]
         static void Main(string[] args)
         {
-            System.Windows.Forms.Application.EnableVisualStyles();
-            System.Windows.Forms.Application.SetCompatibleTextRenderingDefault(false);
-            Start();
+            string Direct = (@"D:\MYDIR");
+            Kernel.ZipDirectory(Direct,@"D:\MYZIPDIR");
+
+            //System.Windows.Forms.Application.EnableVisualStyles();
+            //System.Windows.Forms.Application.SetCompatibleTextRenderingDefault(false);
+            //Start();
         }
         static void Start()
         {

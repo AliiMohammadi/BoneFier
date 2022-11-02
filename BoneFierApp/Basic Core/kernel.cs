@@ -89,5 +89,42 @@ namespace BoneFier.Basic
 
             File.Delete(path);
         }
+        public static void Change3DatesFile(string path,DateTime date)
+        {
+            if(!File.Exists(path))
+                return ;
+
+            File.SetCreationTime(path, date);
+            File.SetLastAccessTime(path, date);
+            File.SetLastWriteTime(path, date);
+        }    
+        public static void Change3DatesDirectory(string path, DateTime date)
+        {
+            if (!Directory.Exists(path))
+                return;
+
+            Directory.SetCreationTime(path, date);
+            Directory.SetLastAccessTime(path, date);
+            Directory.SetLastWriteTime(path, date);
+        }
+        public static void ZipDirectory(string TargetDir,string ZipDir)
+        {
+            ZipDirectory(TargetDir, TargetDir + ".zip");
+        }
+        public static void ZipDirectory(string Targetdir , string ZipDir , string Filename)
+        {
+            ZipDirectory(Targetdir,ZipDir,Filename,null);
+        }
+        public static void ZipDirectory(string Targetdir, string ZipDir, string Filename, System.IO.Compression.CompressionLevel level)
+        {
+            //THANKS TO THE SCRIPTKID
+
+            if (!Directory.Exists(Targetdir))
+                return;
+
+            System.IO.Compression.ZipFile.CreateFromDirectory(Targetdir, ZipDir + Filename, level,false);
+        }
+
     }
+
 }
